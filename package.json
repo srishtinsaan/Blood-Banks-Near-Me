@@ -1,0 +1,25 @@
+{
+  "name": "bloodbanksnearme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srishtinsaan/Blood-Banks-Near-Me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srishtinsaan/Blood-Banks-Near-Me/issues"
+  },
+  "homepage": "https://github.com/srishtinsaan/Blood-Banks-Near-Me#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
