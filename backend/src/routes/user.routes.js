@@ -3,6 +3,6 @@ import { fetchBloodBanksByPinCode } from "../controllers/user.controller.js";
 
 const router = Router();
 
-router.route("/search").post(fetchBloodBanksByPinCode)
+router.route("/bloodbanks").post(fetchBloodBanksByPinCode)
 
 export default router

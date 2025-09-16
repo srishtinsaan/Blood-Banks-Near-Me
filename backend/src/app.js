@@ -14,6 +14,6 @@ app.use(express.urlencoded({
     extended: true 
 }))
 
-app.use("/api/bloodbanks", userRouter)
+app.use("/api", userRouter)
 
 export {app}

@@ -1,44 +1,51 @@
-import { useEffect } from 'react'
 import { useState } from 'react'
-import axios from "axios"
-
+import { fetchBloodBanks } from "./utils/helper.js";
 
 function App() {
-  const [database, setdatabase] = useState([])
-  const [enteredPIN, setPIN] = useState(0)
-  const [banksPresent, setBanksPresent] = useState([])
+  const [pincode, setPincode] = useState("");
+  const [banksPresent, setbanksPresent] = useState([]);
+  const [error, setError] = useState("");
 
-  useEffect(() => {
-    axios.get('/api/bloodbanks')
-    .then((response) => {
-      setdatabase(response.data)
-    })
-    .catch((error) => {
-      console.log(error);
-      
-    })
-  }, [])
+  const handleSubmit = async (e) => {
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    setBanksPresent(database.filter((bank) => bank["Pincode"] === enteredPIN))
-  }
+     e.preventDefault();
+
+    try {
+      setError(null);
+
+      const res = await fetchBloodBanks(pincode);
+
+      console.log("res:", res);
+      console.log("res.data:", res.data)
+
+      setbanksPresent(res.data || [])
+
+    } catch (err) {
+      setError(err.message || "Error fetching data")
+      setbanksPresent([])
+    }
+  };
+
+  
+
 
   return (
 <div>
       <form action="" onSubmit={handleSubmit}>
-        <input type="number" onChange={(e) => setPIN(Number(e.target.value))}/>
+        <input type="number" value={pincode} placeholder='Enter pincode' 
+        onChange={(e) => setPincode(e.target.value)}/>
         <button type="submit">Search</button>  
       </form>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
       
-      
-      <p>Total blood banks in India are : {database.length}</p>
+  
       {
-        banksPresent
-        .map((bank, index) => (
-          <div key={index}>
-            <h2>{bank["Blood Bank Name"]}</h2>
-          </div>
+        banksPresent.map((bank, index) => (
+          <li key={index}>
+            <strong>{bank[" Blood Bank Name"]}</strong> - {bank[" Address"]}
+          </li>
         ))
       }
     </div>
