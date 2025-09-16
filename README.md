@@ -9,7 +9,7 @@ A web application to **find nearby blood banks** based on your **pincode**. Buil
 - Search blood banks by **pincode**.
 - Display **name** , **address** and various other necessary details of blood banks.
 - Responsive design for **desktop and mobile**.
-- 
+
 ---
 
 ## Technologies Used
