@@ -20,6 +20,10 @@ const fetchBloodBanksByPinCode = asyncHandler(async (req, res) => {
     if (pincode.toString().length < 6) {
         throw new ApiError(400, "Pincode must be at least 6 digits");
     }
+
+    if (pincode.toString().length > 6) {
+        throw new ApiError(400, "Pincode must be of 6 digits");
+    }
     
     if(isNaN(pincode)){
         throw new ApiError(400, "Pincode must be a number");

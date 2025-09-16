@@ -5,6 +5,11 @@ export const fetchBloodBanks = async (pincode) => {
     const response = await axios.post(`/api/bloodbanks`, { pincode });
     return response.data;
   } catch (error) {
-    throw error.response?.data.message || "errrrrrror"
+    console.log(error.response);
+    console.log(error.response?.data);
+    
+    
+    const backendError = error.response?.data
+    throw new Error(backendError?.message || "Something went wrong")
   }
 };
