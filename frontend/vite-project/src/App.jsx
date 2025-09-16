@@ -1,53 +1,24 @@
-import { useState } from 'react'
-import { fetchBloodBanks } from "./utils/helper.js";
+
+import Home from './pages/Home.jsx';
 
 function App() {
-  const [pincode, setPincode] = useState("");
-  const [banksPresent, setbanksPresent] = useState([]);
-  const [error, setError] = useState("");
-
-  const handleSubmit = async (e) => {
-
-     e.preventDefault();
-
-    try {
-      setError(null);
-
-      const res = await fetchBloodBanks(pincode);
-
-      console.log("res:", res);
-      console.log("res.data:", res.data)
-
-      setbanksPresent(res.data || [])
-
-    } catch (err) {
-      setError(err.message || "Error fetching data")
-      setbanksPresent([])
-    }
-  };
-
   
-
 
   return (
-<div>
-      <form action="" onSubmit={handleSubmit}>
-        <input type="number" value={pincode} placeholder='Enter pincode' 
-        onChange={(e) => setPincode(e.target.value)}/>
-        <button type="submit">Search</button>  
-      </form>
+    <div className="min-h-screen w-full flex relative bg-black justify-center">
+      {/* Crimson Shadow Background with Top Glow */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 80, 120, 0.25), transparent 70%), #000000",
+        }}
+      />
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      
-  
-      {
-        banksPresent.map((bank, index) => (
-          <li key={index}>
-            <strong>{bank[" Blood Bank Name"]}</strong> - {bank[" Address"]}
-          </li>
-        ))
-      }
+      {/* Your Content/Components */}
+      <div className="relative z-10 flex justify-center min-h-screen text-white">
+        <Home />
+      </div>
     </div>
   )
 }
