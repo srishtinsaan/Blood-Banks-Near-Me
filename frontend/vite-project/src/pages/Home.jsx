@@ -1,15 +1,35 @@
 import Form from "../components/Form"
 import Hero from "../components/Hero"
+import Navbar from "../components/Navbar"
+import Footer from "./Footer"
+import BloodGroups from "./BloodGroups"
+import Features from "./Features"
+import Testimonials from "./Testimonials"
 function Home() {
   return (
-    <div>
+    <div className="w-full h-full">
         {/* navbar */}
+        <Navbar/>
 
-     {/* hero */}
-     <Hero/>
+      <div className="flex flex-col items-center">
+        {/* hero */}
+        <Hero/>
 
-    {/* search*/}
-      <Form/>
+        {/* search*/}
+        <Form/>
+
+        {/* Blood Groups */}
+        <BloodGroups/>
+
+        {/* features */}
+        <Features/>
+
+        {/* testimonials */}
+        <Testimonials/>
+
+        {/* footer */}
+        <Footer/>
+      </div>
     </div>
   )
 }
