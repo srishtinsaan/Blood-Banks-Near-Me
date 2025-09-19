@@ -45,7 +45,7 @@ function Results() {
   }, [pincode]);
 
   return (
-    <div>
+    <div className="min-h-screen">
 
       <div className="flex justify-center">
         <Navbar/>

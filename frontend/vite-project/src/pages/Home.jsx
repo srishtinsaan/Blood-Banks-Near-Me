@@ -23,17 +23,7 @@ function Home() {
   <span className="font-bold italic">Blood Bank Near Me</span> helps you find the nearest and most reliable blood banks instantly. Whether it’s an emergency or regular need, our platform connects you to life-saving resources with just a few clicks.</p>
 
 
-        {/* Blood Groups */}
-        <BloodGroups/>
-
-        {/* features */}
-        <Features/>
-
-        {/* testimonials */}
-        <Testimonials/>
-
-        {/* footer */}
-        <Footer/>
+        
       </div>
     </div>
   )

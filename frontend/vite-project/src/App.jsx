@@ -2,14 +2,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Form from "./components/Form.jsx";
 import Results from "./pages/Results.jsx";
+import BloodGroups from "./pages/BloodGroups.jsx";
+import Features from "./pages/Features.jsx";
+import Testimonials from "./pages/Testimonials.jsx";
+import Footer from "./pages/Footer.jsx";
 function App() {
   return (
     <BrowserRouter>
       {/* Background */}
       <div className="min-h-screen w-full relative bg-black text-white">
         
-        <div
-  className="absolute inset-0 z-0 fixed"
+        
+
+        {/* Crimson Shadow Background with Top Glow */}
+        
+
+        {/* Page Content */}
+        <div className="relative z-10 flex justify-center flex-col min-h-screen">
+          <Routes>
+            <Route path="/" element={
+              <div
+  className="absolute inset-0 z-0 "
   style={{
     backgroundColor: "#0a0a0a",
     backgroundImage: `
@@ -20,19 +33,15 @@ function App() {
     backgroundSize: "10px 10px, 10px 10px, auto",
     imageRendering: "pixelated",
   }}
-/>
-
-        {/* Crimson Shadow Background with Top Glow */}
-        
-
-        {/* Page Content */}
-        <div className="relative z-10 flex justify-center min-h-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Form />} />
+>
+  <Home />
+  <BloodGroups />
+  <Footer />
+  </div>} />
             <Route path="/banks" element={<Results/>} />
           </Routes>
         </div>
+
       </div>
     </BrowserRouter>
   );

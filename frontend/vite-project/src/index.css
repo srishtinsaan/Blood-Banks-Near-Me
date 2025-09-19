@@ -3,6 +3,9 @@
 html, body {
   color: white;
 }
+* {
+  user-select: none;
+}
 
 /* Hide arrows in Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-inner-spin-button,

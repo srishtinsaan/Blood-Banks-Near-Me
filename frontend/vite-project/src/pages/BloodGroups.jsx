@@ -17,7 +17,7 @@ export default function BloodGroups() {
   const bloodGroups = Object.keys(bloodCompatibility);
 
   return (
-    <div className="flex flex-col items-center min-h-screen text-white p-6">
+    <div className="flex flex-col items-center min-h-100 text-white p-6 bg-black">
       <h1 className="text-3xl font-bold mb-10">Blood Donation Compatibility</h1>
 
       {/* Circles */}
@@ -25,7 +25,13 @@ export default function BloodGroups() {
         {bloodGroups.map((group) => (
           <button
   key={group}
-  onClick={() => setSelected(group)}
+  onClick={() => {
+    if (selected === group) {
+        setSelected(null);  // hide info
+    } else {
+        setSelected(group);  // show info
+    }
+  }}
   className={`w-20 h-20 flex items-center justify-center rounded-full border-2 transition
     ${selected === group 
       ? "bg-red-800 border-red-300" 
