@@ -5,7 +5,6 @@ import Footer from "./Footer"
 import BloodGroups from "./BloodGroups"
 import Features from "./Features"
 import Testimonials from "./Testimonials"
-import Loader from "../components/Loader"
 function Home() {
   return (
     <div className="w-full h-full">
@@ -18,6 +17,11 @@ function Home() {
 
         {/* form */}
         <Form/>
+
+        {/* Intro */}
+        <p className="text-center text-[110%] px-70 mb-50">
+  <span className="font-bold italic">Blood Bank Near Me</span> helps you find the nearest and most reliable blood banks instantly. Whether it’s an emergency or regular need, our platform connects you to life-saving resources with just a few clicks.</p>
+
 
         {/* Blood Groups */}
         <BloodGroups/>

@@ -13,7 +13,7 @@ function Form() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-30 ">
       <form
         onSubmit={handleSubmit}
         className="flex justify-center gap-3 m-9"
