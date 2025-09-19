@@ -10,6 +10,8 @@ export const fetchBloodBanks = async (pincode) => {
     
     
     const backendError = error.response?.data
+    console.log(backendError?.message);
+    
     throw new Error(backendError?.message || "Something went wrong")
   }
 };

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import Form from "./components/Form.jsx";
 import Results from "./pages/Results.jsx";
-
 function App() {
   return (
     <BrowserRouter>
@@ -29,7 +29,8 @@ function App() {
         <div className="relative z-10 flex justify-center min-h-screen">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/banks" element={<Results />} />
+            <Route path="/" element={<Form />} />
+            <Route path="/banks" element={<Results/>} />
           </Routes>
         </div>
       </div>

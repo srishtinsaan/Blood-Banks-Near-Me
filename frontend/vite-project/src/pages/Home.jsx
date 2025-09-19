@@ -5,6 +5,7 @@ import Footer from "./Footer"
 import BloodGroups from "./BloodGroups"
 import Features from "./Features"
 import Testimonials from "./Testimonials"
+import Loader from "../components/Loader"
 function Home() {
   return (
     <div className="w-full h-full">
@@ -15,7 +16,7 @@ function Home() {
         {/* hero */}
         <Hero/>
 
-        {/* search*/}
+        {/* form */}
         <Form/>
 
         {/* Blood Groups */}
