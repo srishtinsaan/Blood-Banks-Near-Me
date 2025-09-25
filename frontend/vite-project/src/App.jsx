@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Form from "./components/Form.jsx";
 import Results from "./pages/Results.jsx";
 import BloodGroups from "./pages/BloodGroups.jsx";
 import Features from "./pages/Features.jsx";
-import Testimonials from "./pages/Testimonials.jsx";
+import GetStartedSection from "./pages/GetStartedScection.jsx";
 import Footer from "./pages/Footer.jsx";
 function App() {
   return (
@@ -35,7 +34,9 @@ function App() {
   }}
 >
   <Home />
+  <Features/>
   <BloodGroups />
+  <GetStartedSection/>
   <Footer />
   </div>} />
             <Route path="/banks" element={<Results/>} />

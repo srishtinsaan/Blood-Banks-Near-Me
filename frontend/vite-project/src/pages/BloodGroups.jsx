@@ -17,11 +17,17 @@ export default function BloodGroups() {
   const bloodGroups = Object.keys(bloodCompatibility);
 
   return (
-    <div className="flex flex-col items-center min-h-100 text-white p-6 bg-black">
-      <h1 className="text-3xl font-bold mb-10">Blood Donation Compatibility</h1>
+    <div className="flex flex-col items-center min-h-100 text-white p-6">
+      <h1 className="text-4xl font-bold mb-5">Blood Donation Compatibility</h1>
+
+      {/* Intro */}
+        <p className="text-center text-[110%] px-65 mb-10">
+          
+          Click on the blood group to check which blood groups you can donate to and receive from.
+  </p>
 
       {/* Circles */}
-      <div className="grid grid-cols-8 gap-6 mb-8">
+      <div className="grid grid-cols-8 gap-6 mb-8 ">
         {bloodGroups.map((group) => (
           <button
   key={group}
@@ -34,8 +40,8 @@ export default function BloodGroups() {
   }}
   className={`w-20 h-20 flex items-center justify-center rounded-full border-2 transition
     ${selected === group 
-      ? "bg-red-800 border-red-300" 
-      : "hover:bg-white/10 hover:scale-110"}`
+      ? "bg-red-500/50 border-red-900" 
+      : "hover:bg-white hover:text-black hover:text-semibold "}`
   }
 >
   {group}
@@ -44,8 +50,9 @@ export default function BloodGroups() {
       </div>
 
       {/* Result */}
+
       {selected && (
-        <div className="w-full max-w-md bg-white/10 p-6 rounded-lg shadow-lg flex flex-col justify-center">
+        <div className="w-full max-w-md inset-shadow-sm inset-shadow-red-500/50 p-6 rounded-lg shadow-lg flex flex-col justify-center">
             <h2 className="text-xl font-semibold mb-4 flex justify-center">Selected Blood Group: {selected}</h2>
             <div className="flex gap-5 justify-center">
                 <div>
