@@ -7,7 +7,7 @@ export default defineConfig({
   server : {
     proxy : {
       '/api' : {
-        target: 'https://blood-banks-near-me.vercel.app',
+        target: 'http://localhost:8000',
         changeOrigin: true,
       }
     },
