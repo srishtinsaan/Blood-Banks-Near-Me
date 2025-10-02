@@ -2,9 +2,7 @@ import express from "express"
 import cors from "cors"
 import userRouter from "./routes/user.routes.js"
 import { ApiError } from "./utils/ApiError.js"
-import path from "path"
 
-const _dirname = path.resolve()
 
 
 
@@ -20,15 +18,13 @@ app.use(express.urlencoded({
     extended: true 
 }))
 
+
+
+
+
 app.use("/api", userRouter)
 
-// connect to frontend folder
 
-app.use(express.static(path.join(_dirname, "/frontend/dist")))
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(_dirname, "frontend", "dist" , "index.html"))
-})
 
 
 

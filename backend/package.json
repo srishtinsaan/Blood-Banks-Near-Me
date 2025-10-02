@@ -5,7 +5,8 @@
   "type": "module",
   "start": "node src/index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config src/index.js"
+    "dev": "nodemon -r dotenv/config src/index.js",
+    "vercel-start" : "node src/index.js"
   },
   "author": "srishti",
   "license": "ISC",
