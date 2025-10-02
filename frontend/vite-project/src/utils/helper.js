@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const fetchBloodBanks = async (pincode) => {
   try {
-    const response = await axios.post(`/api/bloodbanks`, { pincode });
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/bloodbanks`, { pincode });
     return response.data;
   } catch (error) {
     console.log(error.response);
